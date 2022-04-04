@@ -20,10 +20,13 @@ public class PlayerMovement : MonoBehaviour
 
     CharacterController cb;
 
+    Animator Anim;
+
     // Start is called before the first frame update
     void Start()
     {
         cb = GetComponent<CharacterController>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,10 +55,13 @@ public class PlayerMovement : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, SmoothTurnTime);
             transform.rotation = Quaternion.Euler(0f,angle,0f);
 
-            ////////////////////////animation/////////////////////
-            //// koþu true
+            Anim.SetBool("isRunning", true);
+
         }
-           /// koþu false
+        else
+        {
+            Anim.SetBool("isRunning", false);
+        }
 
 
     }

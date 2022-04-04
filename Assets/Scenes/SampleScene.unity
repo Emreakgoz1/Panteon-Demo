@@ -362,9 +362,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1060019560865440829, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a64b37a35363cd41a03f9d11873a05d, type: 2}
     - target: {fileID: 919132149155446097, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
       propertyPath: m_Name
       value: Boy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628009443987643349, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8628009443987643349, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -373,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 8628009443987643349, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 1a64b37a35363cd41a03f9d11873a05d, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
 --- !u!1 &1468456375 stripped
@@ -414,6 +422,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.12, z: 0}
+--- !u!95 &1468456379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468456375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ed053daba99a4e44cb0431df0da2c451, type: 3}
+  m_Controller: {fileID: 9100000, guid: 10665625895971b4f8c035f2ebbdc087, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1847921722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 342f6854d8a5e284a97c7d5557fb2221, type: 3}
