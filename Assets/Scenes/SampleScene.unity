@@ -3277,6 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchMove: 0
+  model: {fileID: 1468456378}
   MovementForce: 10
   SmoothTurnTime: 0.1
   jumppower: 1
@@ -3296,6 +3297,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &1468456378 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cb6c6f1d0bb12b64b8549548c145603f, type: 3}
+  m_PrefabInstance: {fileID: 1085096819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1468456379
 Animator:
   serializedVersion: 3
