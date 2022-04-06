@@ -7,25 +7,27 @@ public class PlayerMovement : MonoBehaviour
     float Horizontal;
 
     float Vertical;
-
-    [SerializeField] float MovementForce = 10f;
-
-    float turnSmoothVelocity;
-
-    [SerializeField] float SmoothTurnTime = 0.1f;
+    
 
     public bool SwitchMove = false;
 
+    float turnSmoothVelocity;
+    
+
+    [SerializeField] float MovementForce = 10f;
+    [SerializeField] float SmoothTurnTime = 0.1f;
+    [SerializeField] float jumppower;
+
     Vector3 direction;
 
-    CharacterController cb;
+    Rigidbody rb;
 
     Animator Anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        cb = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
         Anim = GetComponent<Animator>();
     }
 
@@ -35,10 +37,13 @@ public class PlayerMovement : MonoBehaviour
         Horizontal = Input.GetAxis("Horizontal");
         Vertical = Input.GetAxis("Vertical");
         direction = new Vector3(Horizontal, 0, Vertical);
-        cb.Move(direction * Time.deltaTime * MovementForce);
+        rb.MovePosition(transform.position + (direction * MovementForce * Time.fixedDeltaTime));
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumppower, ForceMode.Force);
+        }
         
-
         if (direction.magnitude > 0.01f)
         {
             float targetAngle;
@@ -63,7 +68,10 @@ public class PlayerMovement : MonoBehaviour
             Anim.SetBool("isRunning", false);
         }
 
+       
+
 
     }
     
+
 }
