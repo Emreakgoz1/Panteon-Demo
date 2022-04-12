@@ -13,7 +13,7 @@ public class SpawnOpponents : MonoBehaviour
     void Awake()
     {
         //Get players count as static
-        playerCount = transform.childCount + 1;
+        playerCount = transform.childCount;
     }
     void Start()
     {

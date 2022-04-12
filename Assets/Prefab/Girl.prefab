@@ -935,9 +935,11 @@ GameObject:
   - component: {fileID: 2604307466408703467}
   - component: {fileID: 1806048071484495387}
   - component: {fileID: 691514945652823302}
+  - component: {fileID: -4064333049602881687}
+  - component: {fileID: 3707720169557969150}
   m_Layer: 6
   m_Name: Girl
-  m_TagString: Untagged
+  m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,7 +971,7 @@ Animator:
   m_GameObject: {fileID: 8759404173322990891}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5d77f2f6576e052458ab81cf9c44a7c3, type: 3}
-  m_Controller: {fileID: 9100000, guid: 10665625895971b4f8c035f2ebbdc087, type: 2}
+  m_Controller: {fileID: 9100000, guid: 945e4ea82d8d44242aa82e8489f94ebd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1013,3 +1015,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovePositionTransform: {fileID: 8693500255971869418, guid: e1b7ea149d8233b40add0b92d3b6cc33, type: 3}
+--- !u!54 &-4064333049602881687
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759404173322990891}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!136 &3707720169557969150
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759404173322990891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.7086954
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.223416, z: 0}
