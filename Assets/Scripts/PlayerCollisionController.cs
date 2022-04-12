@@ -7,9 +7,13 @@ public class PlayerCollisionController : MonoBehaviour
 {
     
     [SerializeField] GameObject PaintWall;
+    [SerializeField] GameObject Cam1;
+    [SerializeField] GameObject Cam2;
+    PlayerMovement PlayerMovement;
     private void Start()
     {
         PaintWall.SetActive(false);
+        PlayerMovement = GetComponent<PlayerMovement>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +25,12 @@ public class PlayerCollisionController : MonoBehaviour
         {
             
             PaintWall.SetActive(true);
+            //Cam1.SetActive(false);
+            //Cam2.SetActive(true);
+            PlayerMovement.MovementZero();
+            
+            
+         
         }
     }
     

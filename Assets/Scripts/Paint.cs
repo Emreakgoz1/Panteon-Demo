@@ -21,8 +21,12 @@ public class Paint : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray,out hit))
             {
+                if (hit.transform.tag=="Wall")
+                {
                 var go = Instantiate(Brush, hit.point + Vector3.up * 0.1f, Quaternion.identity,transform);
                 go.transform.localScale = Vector3.one * Brushsize;
+                }
+                
 
             }
         }

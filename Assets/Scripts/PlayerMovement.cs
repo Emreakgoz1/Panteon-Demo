@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothVelocity;
     bool isjumping = false;
     [SerializeField] Transform model;
-
-    [SerializeField] float MovementForce = 10f;
+    [SerializeField] FloatingJoystick joystick;
+    [SerializeField] public float MovementForce = 10f;
     [SerializeField] float SmoothTurnTime = 0.1f;
     [SerializeField] float jumppower;
 
@@ -39,11 +39,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
+        Move();
+        
+       
+
+    }
+    public void Move()
+    {
+        Horizontal = joystick.Horizontal;
+        Vertical = joystick.Vertical;
         direction = new Vector3(Horizontal, 0, Vertical);
         rb.MovePosition(transform.position + (direction * MovementForce * Time.fixedDeltaTime));
-       
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!isjumping)
@@ -57,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
                     isjumping = false;
                 });
             }
-            
+
         }
 
         if (direction.magnitude > 0.01f)
@@ -70,11 +76,11 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                targetAngle = Mathf.Atan2(-direction.x,-direction.z) * Mathf.Rad2Deg;
+                targetAngle = Mathf.Atan2(-direction.x, -direction.z) * Mathf.Rad2Deg;
             }
 
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, SmoothTurnTime);
-            transform.rotation = Quaternion.Euler(0f,angle,0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Anim.SetBool("isRunning", true);
 
@@ -83,11 +89,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Anim.SetBool("isRunning", false);
         }
-
-       
-
-
     }
+    public void MovementZero()
+    {
+        MovementForce = 0;
+    }
+    
     
 
 }
