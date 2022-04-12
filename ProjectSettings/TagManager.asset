@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Engel
   - Ground
+  - Wall
+  - Opponent
   layers:
   - Default
   - TransparentFX

@@ -46,10 +46,39 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Move()
     {
-        Horizontal = joystick.Horizontal;
-        Vertical = joystick.Vertical;
-        direction = new Vector3(Horizontal, 0, Vertical);
-        rb.MovePosition(transform.position + (direction * MovementForce * Time.fixedDeltaTime));
+        if (Input.GetMouseButton(0))
+        {
+
+            Horizontal = Input.GetAxis("Horizontal");
+            Vertical = Input.GetAxis("Vertical");
+            direction = new Vector3(Horizontal, 0, Vertical);
+            rb.MovePosition(transform.position + (direction * MovementForce * Time.fixedDeltaTime));
+
+
+            if (direction.magnitude > 0.01f)
+            {
+                float targetAngle;
+
+                if (!SwitchMove)
+                {
+                    targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                }
+                else
+                {
+                    targetAngle = Mathf.Atan2(-direction.x, -direction.z) * Mathf.Rad2Deg;
+                }
+
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, SmoothTurnTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                Anim.SetBool("isRunning", true);
+
+            }
+            else
+            {
+                Anim.SetBool("isRunning", false);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!isjumping)
@@ -64,30 +93,6 @@ public class PlayerMovement : MonoBehaviour
                 });
             }
 
-        }
-
-        if (direction.magnitude > 0.01f)
-        {
-            float targetAngle;
-
-            if (!SwitchMove)
-            {
-                targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            }
-            else
-            {
-                targetAngle = Mathf.Atan2(-direction.x, -direction.z) * Mathf.Rad2Deg;
-            }
-
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, SmoothTurnTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            Anim.SetBool("isRunning", true);
-
-        }
-        else
-        {
-            Anim.SetBool("isRunning", false);
         }
     }
     public void MovementZero()
