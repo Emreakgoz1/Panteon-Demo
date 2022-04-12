@@ -19,7 +19,7 @@ public class OpponentController : MonoBehaviour
     {
         if (other.tag=="Engel")
         {
-            Debug.Log("Çarptýn");
+            
         }
     }
 }

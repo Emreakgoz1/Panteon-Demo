@@ -937,6 +937,7 @@ GameObject:
   - component: {fileID: 691514945652823302}
   - component: {fileID: -4064333049602881687}
   - component: {fileID: 3707720169557969150}
+  - component: {fileID: 1786481729337607638}
   m_Layer: 6
   m_Name: Girl
   m_TagString: Opponent
@@ -952,7 +953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8759404173322990891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.83, y: 0.04, z: -53.26}
+  m_LocalPosition: {x: 5.21, y: 0.05, z: -54.87}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 8465296284283886760}
@@ -1027,10 +1028,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 4
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!136 &3707720169557969150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1039,9 +1040,23 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8759404173322990891}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2.7086954
   m_Direction: 1
   m_Center: {x: 0, y: 1.223416, z: 0}
+--- !u!114 &1786481729337607638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759404173322990891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a38f63ae36486743a97c79aecd6b896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 8269865671203876753}
+  respawnPoint: {fileID: 4159703258018618382, guid: c011d7e876ca7d24cbfbd56c0858e153, type: 3}
