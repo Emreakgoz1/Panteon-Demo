@@ -15,11 +15,5 @@ public class OpponentController : MonoBehaviour
     {
         navMeshAgent.destination = MovePositionTransform.position;
     }
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag=="Engel")
-        {
-            
-        }
-    }
+    
 }
