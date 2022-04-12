@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    
+
+    [SerializeField] Camera cam;
     [SerializeField] float MovementForce;
     Animator Anim; 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(Vector3.forward * MovementForce * Time.deltaTime);
 
             Vector3 inputPosition = Input.mousePosition;
-            Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 screenPoint = cam.WorldToScreenPoint(transform.position);   
             Vector2 offset = new Vector2(inputPosition.x - screenPoint.x, inputPosition.y - screenPoint.y);
             float TargetAngle = Mathf.Atan2(offset.x, offset.y) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, TargetAngle, 0);

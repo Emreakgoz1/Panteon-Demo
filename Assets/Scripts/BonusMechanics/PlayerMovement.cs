@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothVelocity;
     bool isjumping = false;
     [SerializeField] Transform model;
-    [SerializeField] FloatingJoystick joystick;
     [SerializeField] public float MovementForce = 10f;
     [SerializeField] float SmoothTurnTime = 0.1f;
     [SerializeField] float jumppower;

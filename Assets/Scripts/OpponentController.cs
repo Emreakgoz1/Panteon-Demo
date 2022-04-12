@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class OpponentController : MonoBehaviour
 {
-    [SerializeField] private Transform MovePositionTransform;
+    [SerializeField] public Transform MovePositionTransform;
     private NavMeshAgent navMeshAgent;
     private void Awake()
     {

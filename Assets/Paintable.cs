@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Paintable : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     [SerializeField] GameObject Brush;
     [SerializeField] float BrushSize;
 
@@ -18,7 +19,7 @@ public class Paintable : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            var Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var Ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(Ray,out hit))
             {

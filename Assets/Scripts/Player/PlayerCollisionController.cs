@@ -12,8 +12,8 @@ public class PlayerCollisionController : MonoBehaviour
     PlayerMovement PlayerMovement;
     private void Start()
     {
-        //Cam1.SetActive(true);
-        //Cam2.SetActive(false);
+       
+        Cam2.SetActive(false);
         PaintWall.SetActive(false);
         PlayerMovement = GetComponent<PlayerMovement>();
     }
@@ -27,8 +27,8 @@ public class PlayerCollisionController : MonoBehaviour
         {
             
             PaintWall.SetActive(true);
-            //Cam1.SetActive(false);
-            //Cam2.SetActive(true);
+            Cam1.SetActive(false);
+            Cam2.SetActive(true);
           
         }
     }
