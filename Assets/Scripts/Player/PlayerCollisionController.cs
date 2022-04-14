@@ -34,7 +34,7 @@ public class PlayerCollisionController : MonoBehaviour
     {
         if (other.tag=="Engel")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         if (other.tag=="Finish")
         {
