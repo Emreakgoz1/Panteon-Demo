@@ -39,10 +39,7 @@ public class PlayerMove : MonoBehaviour
             Anim.SetBool("isRunning", false);
         }
     }
-    public void MovementZero()
-    {
-        MovementForce = 0f;
-    }
+   
 
 
    

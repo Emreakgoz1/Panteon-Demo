@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Paintable : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Paintable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Paintable : MonoBehaviour
         {
             var Ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(Ray,out hit))
+            if (Physics.Raycast(Ray, out hit))
             {
                 var go = Instantiate(Brush, hit.point + Vector3.down * 0.1f, Quaternion.identity, transform);
                 go.transform.localScale = Vector3.one * BrushSize;
@@ -32,4 +33,6 @@ public class Paintable : MonoBehaviour
 
 
     }
+
+    
 }

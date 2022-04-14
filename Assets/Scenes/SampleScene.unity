@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3628797396774841702, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e027421909ce1f94999ffce5a679614a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
 --- !u!1001 &92444558
@@ -828,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &230834078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3793,7 +3797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.26120213, y: -0, z: -0, w: 0.96528417}
-  m_LocalPosition: {x: 5.1, y: 6.48, z: -64.5}
+  m_LocalPosition: {x: 5.1, y: 11.35, z: -69.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5430,6 +5434,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3628797396774841702, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e027421909ce1f94999ffce5a679614a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
 --- !u!4 &1519993807 stripped
@@ -6116,7 +6124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664342161}
   m_LocalRotation: {x: 0.20515166, y: -0, z: -0, w: 0.9787302}
-  m_LocalPosition: {x: 5.06, y: 5.999, z: 63.37}
+  m_LocalPosition: {x: 5.06, y: 2.87, z: 63.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7932,6 +7940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3628797396774841702, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e027421909ce1f94999ffce5a679614a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a24403135e3f5c34e81ca7f50e21cde7, type: 3}
 --- !u!1001 &5144471318339622733
