@@ -7,7 +7,7 @@ using TMPro;
 
 public class PlayerCollisionController : MonoBehaviour
 {
-    
+    [SerializeField] CameraController CameraController;
     [SerializeField] GameObject PaintWall;
     [SerializeField] GameObject Cam1;
     [SerializeField] GameObject Cam2;
@@ -17,7 +17,7 @@ public class PlayerCollisionController : MonoBehaviour
     [SerializeField] GameObject TextMesh;
     [SerializeField] Button Restart;
     [SerializeField] GameObject RestartButtton;
-    PlayerMovement PlayerMove;
+    
     private void Start()
     {
         TextMesh.gameObject.SetActive(false);
@@ -28,7 +28,7 @@ public class PlayerCollisionController : MonoBehaviour
         Restart.enabled = false;
         Cam2.SetActive(false);
         PaintWall.SetActive(false);
-        PlayerMove = GetComponent<PlayerMovement>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -38,6 +38,7 @@ public class PlayerCollisionController : MonoBehaviour
         }
         if (other.tag=="Finish")
         {
+            CameraController.isPaintCamera = true;
             TextMesh.gameObject.SetActive(true);
             text.enabled = true;
             PaintWall.SetActive(true);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
+    [SerializeField] CameraController CameraController;
     [SerializeField] Camera cam;
     [SerializeField] float MovementForce;
     Animator Anim; 
@@ -23,6 +24,10 @@ public class PlayerMove : MonoBehaviour
 
     public void MoveCharacter()
     {
+        if (CameraController.isPaintCamera)
+        {
+            return;
+        }
         if (Input.GetMouseButton(0))
         {
             transform.Translate(Vector3.forward * MovementForce * Time.deltaTime);

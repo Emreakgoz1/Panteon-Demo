@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfd695a9be10674b92fd466f221bb3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 0.5
   RotationDistance: 7.4
   RotationBack: 9.23
 --- !u!136 &104505565
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfd695a9be10674b92fd466f221bb3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 0.5
   RotationDistance: 7.4
   RotationBack: 9.23
 --- !u!1001 &382986187
@@ -4173,6 +4173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aa7a5dbd70e594093dcd61ff951a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaintCamera: 0
   playerTransform: {fileID: 1468456378}
   smoothFactor: 0.05
 --- !u!1001 &1004881147
@@ -5700,6 +5701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a7dcea549278f428df55fb9e793671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraController: {fileID: 963194229}
   PaintWall: {fileID: 230834077}
   Cam1: {fileID: 963194225}
   Cam2: {fileID: 1664342161}
@@ -5721,6 +5723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c83b9fcdbb1c3649adf5ae49cc2085d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraController: {fileID: 963194229}
   cam: {fileID: 963194227}
   MovementForce: 3
 --- !u!1001 &1470736488
@@ -6093,7 +6096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfd695a9be10674b92fd466f221bb3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 0.5
   RotationDistance: 2
   RotationBack: 0.74
 --- !u!4 &1535526695 stripped
@@ -7293,7 +7296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfd695a9be10674b92fd466f221bb3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 0.5
   RotationDistance: 2
   RotationBack: 0.74
 --- !u!4 &1758636932 stripped

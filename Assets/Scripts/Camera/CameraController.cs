@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public bool isPaintCamera = false;
     public Transform playerTransform;
     private Vector3 _cameraOffset;
 
