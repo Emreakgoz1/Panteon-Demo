@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Wall
   - Opponent
+  - Rotator
+  - RotatingObstacle
   layers:
   - Default
   - TransparentFX

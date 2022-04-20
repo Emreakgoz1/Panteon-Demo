@@ -7,6 +7,7 @@ using TMPro;
 
 public class PlayerCollisionController : MonoBehaviour
 {
+    [SerializeField] float force;
     [SerializeField] CameraController CameraController;
     [SerializeField] GameObject PaintWall;
     [SerializeField] GameObject Cam1;
@@ -17,9 +18,20 @@ public class PlayerCollisionController : MonoBehaviour
     [SerializeField] GameObject TextMesh;
     [SerializeField] Button Restart;
     [SerializeField] GameObject RestartButtton;
-    
+    [SerializeField] float Pushpower;
+    [SerializeField] float rotateSpeedOnThePlatform;
+    [SerializeField] float pforce;
+
+    Vector3 desiredVelocity;
+    Rigidbody PlayerRb;
+    // private RigidbodyConstraints originalConstraints;
+
+
+
     private void Start()
     {
+        
+        PlayerRb = GetComponent<Rigidbody>();
         TextMesh.gameObject.SetActive(false);
         text.enabled = false;
         EndGameTextt.gameObject.SetActive(false);
@@ -30,13 +42,21 @@ public class PlayerCollisionController : MonoBehaviour
         PaintWall.SetActive(false);
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.tag=="Engel")
+        ObsctaclePushLeft();
+        ObsctaclePushRight();
+    }
+
+
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Engel")
         {
             SceneManager.LoadScene(1);
         }
-        if (other.tag=="Finish")
+        if (collision.transform.tag == "Finish")
         {
             CameraController.isPaintCamera = true;
             TextMesh.gameObject.SetActive(true);
@@ -46,14 +66,17 @@ public class PlayerCollisionController : MonoBehaviour
             Cam2.SetActive(true);
             StartCoroutine(EndGame());
             StartCoroutine(HideText());
-
-
-
         }
+        if (collision.transform.tag == "Rotator")
+        {
+            ObsctaclePush();
+        }
+        
     }
+
     IEnumerator EndGame()
     {
-       yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(15);
         TextMesh.gameObject.SetActive(false);
         text.enabled = false;
 
@@ -66,8 +89,38 @@ public class PlayerCollisionController : MonoBehaviour
         EndGameText.enabled = true;
         RestartButtton.gameObject.SetActive(true);
         Restart.enabled = true;
-        
+    }
+
+    void ObsctaclePush()
+    {
+        PlayerRb.AddForce(0, force, 0, ForceMode.Impulse);
+    }
+    void ObsctaclePushLeft()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position,-transform.up,out hit))
+        {
+            if (hit.transform.tag=="RotatingObstacle")
+            {
+                    PlayerRb.velocity = new Vector3(-2, 0, 0);
+            }
+        }
+ 
+    }
+    void ObsctaclePushRight()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position,-transform.up, out hit))
+        {
+            if (hit.transform.tag == "RotatingObstacleleft")
+            {
+                PlayerRb.velocity = new Vector3(2, 0, 0);
+            }
+        }
+
 
     }
+    
+
 
 }

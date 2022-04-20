@@ -8,7 +8,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] CameraController CameraController;
     [SerializeField] Camera cam;
     [SerializeField] float MovementForce;
-    Animator Anim; 
+    
+
+
+    Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,36 +21,33 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       MoveCharacter();
+        MoveCharacter();
     }
 
 
-    public void MoveCharacter()
-    {
-        if (CameraController.isPaintCamera)
+        public void MoveCharacter()
         {
-            return;
-        }
-        if (Input.GetMouseButton(0))
-        {
-            transform.Translate(Vector3.forward * MovementForce * Time.deltaTime);
+            if (CameraController.isPaintCamera)
+            {
+                return;
+            }
+            if (Input.GetMouseButton(0))
+            {
+                transform.Translate(Vector3.forward * MovementForce * Time.deltaTime);
 
-            Vector3 inputPosition = Input.mousePosition;
-            Vector3 screenPoint = cam.WorldToScreenPoint(transform.position);   
-            Vector2 offset = new Vector2(inputPosition.x - screenPoint.x, inputPosition.y - screenPoint.y);
-            float TargetAngle = Mathf.Atan2(offset.x, offset.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, TargetAngle, 0);
-            Anim.SetBool("isRunning", true);
+                Vector3 inputPosition = Input.mousePosition;
+                Vector3 screenPoint = cam.WorldToScreenPoint(transform.position);
+                Vector2 offset = new Vector2(inputPosition.x - screenPoint.x, inputPosition.y - screenPoint.y);
+                float TargetAngle = Mathf.Atan2(offset.x, offset.y) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, TargetAngle, 0);
+                Anim.SetBool("isRunning", true);
+            }
+            else
+            {
+                Anim.SetBool("isRunning", false);
+            }
         }
-        else
-        {
-            Anim.SetBool("isRunning", false);
-        }
+
+
     }
-   
 
-
-   
-
-
-}
