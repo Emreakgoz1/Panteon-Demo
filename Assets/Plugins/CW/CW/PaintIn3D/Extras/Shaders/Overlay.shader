@@ -1,4 +1,4 @@
-// Upgrade NOTE: replaced 'defined FOG_COMBINED_WITH_WORLD_POS' with 'defined (FOG_COMBINED_WITH_WORLD_POS)'
+-// Upgrade NOTE: replaced 'defined FOG_COMBINED_WITH_WORLD_POS' with 'defined (FOG_COMBINED_WITH_WORLD_POS)'
 // Upgrade NOTE: replaced 'glstate_matrix_projection' with 'UNITY_MATRIX_P'
 
 //<HASH>-445334014</HASH>

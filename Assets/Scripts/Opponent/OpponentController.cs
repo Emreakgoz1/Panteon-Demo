@@ -5,15 +5,16 @@ using UnityEngine.AI;
 
 public class OpponentController : MonoBehaviour
 {
-    [SerializeField] private Transform MovePositionTransform;
+   // [SerializeField] Transform MovePositionTransform;
     private NavMeshAgent navMeshAgent;
+    public GameObject target;
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
-        navMeshAgent.destination = MovePositionTransform.position;
+        this.gameObject.GetComponent<NavMeshAgent>().destination = target.transform.position;
     }
     
 }
