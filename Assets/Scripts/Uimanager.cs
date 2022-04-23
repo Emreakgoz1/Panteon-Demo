@@ -7,14 +7,25 @@ using UnityEngine.UI;
 
 public class Uimanager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] TextMeshProUGUI EndGameText;
-    [SerializeField] GameObject EndGameTextt;
-    [SerializeField] GameObject TextMesh;
-    [SerializeField] Button Restart;
-    [SerializeField] GameObject RestartButtton;
+    
+    [SerializeField] public TextMeshProUGUI text;
+    [SerializeField] public TextMeshProUGUI EndGameText;
+    [SerializeField] public GameObject EndGameTextt;
+    [SerializeField] public GameObject TextMesh;
+    [SerializeField] public Button Restart;
+    [SerializeField] public GameObject RestartButtton;
     // Start is called before the first frame update
     void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    public void GameStartUi()
     {
         TextMesh.gameObject.SetActive(false);
         text.enabled = false;
@@ -24,16 +35,25 @@ public class Uimanager : MonoBehaviour
         Restart.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void SetActiveText()
+   public  void PaintTheWallTextOn()
     {
         TextMesh.gameObject.SetActive(true);
         text.enabled = true;
         
     }
+   public  void PaintTheWallTextOf()
+    {
+        TextMesh.gameObject.SetActive(false);
+        text.enabled = false;
+    }
+
+   public void PaintedTheWallRestartButtonOn()
+    {
+        EndGameTextt.gameObject.SetActive(true);
+        EndGameText.enabled = true;
+        RestartButtton.gameObject.SetActive(true);
+        Restart.enabled = true;
+    }
+    
+
 }

@@ -10,6 +10,8 @@ TagManager:
   - Opponent
   - Rotator
   - RotatingObstacle
+  - RotatingObstacleleft
+  - PaintPlatform
   layers:
   - Default
   - TransparentFX
