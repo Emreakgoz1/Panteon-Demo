@@ -14,10 +14,11 @@ public class Uimanager : MonoBehaviour
     [SerializeField] public GameObject TextMesh;
     [SerializeField] public Button Restart;
     [SerializeField] public GameObject RestartButtton;
+   
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame

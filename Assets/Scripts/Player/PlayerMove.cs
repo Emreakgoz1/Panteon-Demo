@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
     
 
 
-    Animator Anim;
+    public Animator Anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +47,11 @@ public class PlayerMove : MonoBehaviour
                 Anim.SetBool("isRunning", false);
             }
         }
+
+            public void StayAnimation()
+             {
+            Anim.SetBool("isRunning", false);
+             }
 
 
     }

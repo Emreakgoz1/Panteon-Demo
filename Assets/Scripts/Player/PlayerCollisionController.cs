@@ -8,17 +8,19 @@ using TMPro;
 public class PlayerCollisionController : MonoBehaviour
 {
     public Uimanager Uimanager;
+    public PlayerMove PlayerMove;
+    public CameraController CameraController;
+
     [SerializeField] float force;
-    [SerializeField] CameraController CameraController;
     [SerializeField] GameObject PaintWall;
-    [SerializeField] GameObject Cam1;
+    [SerializeField] GameObject Pie;
+    [SerializeField] GameObject FinishLine;
+
     Rigidbody PlayerRb;
-
-
 
     public void Start()
     {
-
+        Pie.SetActive(false);
         Uimanager.GameStartUi();
         PlayerRb = GetComponent<Rigidbody>();
         PaintWall.SetActive(false);
@@ -44,8 +46,10 @@ public class PlayerCollisionController : MonoBehaviour
             CameraController.isPaintCamera = true;
             Uimanager.PaintTheWallTextOn();
             PaintWall.SetActive(true);
- 
-     
+            Pie.SetActive(true);
+            PlayerMove.StayAnimation();
+            FinishLine.SetActive(false);
+         
         }
         if (collision.transform.tag == "Rotator")
         {

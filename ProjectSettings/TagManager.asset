@@ -12,6 +12,7 @@ TagManager:
   - RotatingObstacle
   - RotatingObstacleleft
   - PaintPlatform
+  - RotatingStick
   layers:
   - Default
   - TransparentFX
